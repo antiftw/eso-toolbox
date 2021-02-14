@@ -1,0 +1,38 @@
+<GuiXml>
+  <Controls>
+    <TopLevelControl name="AntiFTWToolboxIndicator" mouseEnabled="true" movable="true" clampedToScreen="true" hidden="true">
+
+      <Dimensions x="200" y="25" />
+      <Anchor point="BOTTOM" relativeTo="GuiRoot" relativePoint="CENTER" offsetY="-20" />
+ 
+      <OnMoveStop>
+        AntiFTWToolbox.OnIndicatorMoveStop()
+      </OnMoveStop>
+ 
+      <Controls>
+        <Button name="$(parent)_hide" inherits="ZO_ButtonBehaviorClickSound" >
+          <OnClicked>AntiFTWToolbox.hideCommand()</OnClicked>
+          <Dimensions x="30" y="30" />                                
+          <Anchor point="TOPRIGHT" relativeTo="$(parent)" relativePoint="TOPRIGHT" offsetX="-120" offsetY="-40"  />
+          <Textures
+              normal    ="/esoui/art/buttons/decline_up.dds"
+              pressed    ="/esoui/art/buttons/decline_down.dds"
+              mouseOver  ="/esoui/art/buttons/decline_over.dds"
+           />  
+      </Button>
+      	<Texture textureFile="esoui/art/menubar/gamepad/gp_playermenu_icon_textchat.dds">
+      		<!-- 
+      			esoui/art/mappins/ava_attackburst_64.dds 64
+      			esoui/art/stats/justice_bounty_icon-red.dds 32 
+      			art/fx/texture/fire_ball_01.dds 128
+      		 -->
+      	  <Anchor point="LEFT" />
+    	  <Dimensions x="64" y="64" />
+		  <OnInitialized>
+		    self:GetParent().icon = self
+		  </OnInitialized>
+      	</Texture>
+      </Controls>
+    </TopLevelControl>
+  </Controls>
+</GuiXml>
